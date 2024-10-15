@@ -1,9 +1,9 @@
 import 'package:aslabtif_travel/const.dart';
+import 'package:aslabtif_travel/detaildestinasi.dart';
 import 'package:aslabtif_travel/models/destination_model.dart';
 import 'package:aslabtif_travel/widgets/popular_destination.dart';
 import 'package:aslabtif_travel/widgets/rekomendasi_destination.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,6 +13,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int selectedPage = 0;
+  List<IconData> icons = [
+    Icons.home_filled,
+    Icons.bookmark_border_rounded,
+    Icons.shopping_cart_outlined,
+    Icons.person_outline_outlined,
+  ];
   List<TravelDestination> popular = listDestination
       .where((element) => element.category == "popular")
       .toList();
@@ -55,14 +62,22 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(height: 20),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(bottom: 20, left: 15),
+            padding: const EdgeInsets.only(bottom: 20, left: 15),
             child: Row(
               children: List.generate(
                 popular.length,
                 (index) => Padding(
-                  padding: EdgeInsets.only(right: 15),
+                  padding: const EdgeInsets.only(right: 15),
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) =>
+                              DetailDestinasi(destination: popular[index]),
+                        ),
+                      );
+                    },
                     child: PopularDestination(
                       destination: popular[index],
                     ),
@@ -95,20 +110,28 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Expanded(
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Column(
                 children: List.generate(
                   rekomendasi.length,
                   (index) => Padding(
                     padding: const EdgeInsets.only(bottom: 10),
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => DetailDestinasi(
+                                destination: rekomendasi[index]),
+                          ),
+                        );
+                      },
                       child: RekomendasiDestination(
                         destination: rekomendasi[index],
                       ),
@@ -116,6 +139,52 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 15, vertical: 18),
+                        decoration: BoxDecoration(
+                          color: kButtonColor,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: List.generate(
+                            icons.length,
+                            (index) => GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  selectedPage = index;
+                                });
+                              },
+                              child: Icon(
+                                icons[index],
+                                size: 32,
+                                color: selectedPage == index
+                                    ? Colors.white
+                                    : Colors.white.withOpacity(0.4),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ],
@@ -128,7 +197,7 @@ class _HomeScreenState extends State<HomeScreen> {
       height: 120,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(25),
           bottomRight: Radius.circular(25),
         ),
@@ -137,13 +206,13 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.grey.withOpacity(0.7),
               spreadRadius: 5,
               blurRadius: 10,
-              offset: Offset(0, 5)),
+              offset: const Offset(0, 5)),
         ],
       ),
       child: SafeArea(
           child: Center(
         child: Padding(
-          padding: EdgeInsets.only(top: 20, left: 15, right: 15),
+          padding: const EdgeInsets.only(top: 20, left: 15, right: 15),
           child: buildSearchButton(),
         ),
       )),
@@ -152,7 +221,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget buildSearchButton() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       decoration: BoxDecoration(
           color: kButtonColor,
           borderRadius: BorderRadius.circular(20),
@@ -161,7 +230,7 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.grey.withOpacity(0.8),
               spreadRadius: 2,
               blurRadius: 10,
-              offset: Offset(0, 5),
+              offset: const Offset(0, 5),
             ),
           ]),
       child: const Row(

@@ -71,7 +71,14 @@ class RekomendasiDestination extends StatelessWidget {
                   height: 5,
                 ),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
+                    Icon(
+                      Icons.star,
+                      size: 18,
+                      color: Colors.yellow[800],
+                    ),
                     Text.rich(
                       TextSpan(
                         children: [

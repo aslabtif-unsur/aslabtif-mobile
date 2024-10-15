@@ -1,3 +1,4 @@
+import 'package:aslabtif_travel/detaildestinasi.dart';
 import 'package:aslabtif_travel/homescreen.dart';
 import 'package:aslabtif_travel/splashscreen.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class TravelApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: Splashscreen(),
     );
   }
 }

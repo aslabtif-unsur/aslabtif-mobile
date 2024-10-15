@@ -16,6 +16,7 @@ class _SplashscreenState extends State<Splashscreen> {
     // Menunda selama 3 detik sebelum berpindah ke halaman berikutnya
     Future.delayed(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
+        // ignore: use_build_context_synchronously
         context,
         MaterialPageRoute(builder: (context) => const LandingPageOne()),
       );
@@ -25,7 +26,7 @@ class _SplashscreenState extends State<Splashscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF0F3F5),
+      backgroundColor: const Color(0xffF0F3F5),
       body: Center(
           child: Stack(
         alignment: Alignment.center,
