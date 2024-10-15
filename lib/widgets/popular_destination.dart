@@ -30,7 +30,7 @@ class PopularDestination extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
           child: Container(
             height: 165,
-            width: MediaQuery.of(context).size.width * 0.75,
+            width: MediaQuery.of(context).size.width * 0.65,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               image: DecorationImage(

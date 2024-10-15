@@ -221,32 +221,36 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget buildSearchButton() {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
-          color: kButtonColor,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.8),
-              spreadRadius: 2,
-              blurRadius: 10,
-              offset: const Offset(0, 5),
-            ),
-          ]),
-      child: const Row(
-        children: [
-          Icon(Icons.search, color: Colors.white54, size: 28),
-          SizedBox(width: 10),
-          Expanded(
-            child: Text(
-              'cari destinasi...',
-              style: TextStyle(
-                  color: Colors.white54,
-                  fontSize: 18,
-                  fontFamily: "NunitoSans"),
-            ),
+        color: kButtonColor,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.8),
+            spreadRadius: 2,
+            blurRadius: 10,
+            offset: const Offset(0, 5),
           ),
         ],
+      ),
+      child: TextField(
+        decoration: InputDecoration(
+          hintText: 'cari destinasi...',
+          hintStyle: TextStyle(
+            color: Colors.white54,
+            fontSize: 18,
+            fontFamily: "NunitoSans",
+          ),
+          prefixIcon: Icon(Icons.search, color: Colors.white54, size: 28),
+          border: InputBorder.none,
+          contentPadding: EdgeInsets.symmetric(vertical: 12),
+        ),
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 18,
+          fontFamily: "NunitoSans",
+        ),
       ),
     );
   }

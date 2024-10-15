@@ -17,7 +17,7 @@ class RekomendasiDestination extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: Row(
         children: [
           Container(
@@ -31,7 +31,7 @@ class RekomendasiDestination extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 5,
           ),
           Expanded(
@@ -41,19 +41,19 @@ class RekomendasiDestination extends StatelessWidget {
               children: [
                 Text(
                   destination.name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
                     color: Colors.black,
                     fontWeight: FontWeight.w600,
                     fontFamily: "NunitoSans",
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.location_on_outlined,
                       color: Colors.black,
                       size: 14,
@@ -67,7 +67,7 @@ class RekomendasiDestination extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 Row(
@@ -84,7 +84,7 @@ class RekomendasiDestination extends StatelessWidget {
                         children: [
                           TextSpan(
                             text: "${destination.rate} ",
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.black),
