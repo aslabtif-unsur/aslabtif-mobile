@@ -1,5 +1,5 @@
-import 'package:aslabtif_travel/const.dart';
-import 'package:aslabtif_travel/detaildestinasi.dart';
+import 'package:aslabtif_travel/utils/const.dart';
+import 'package:aslabtif_travel/screens/detaildestinasi.dart';
 import 'package:aslabtif_travel/models/destination_model.dart';
 import 'package:aslabtif_travel/widgets/popular_destination.dart';
 import 'package:aslabtif_travel/widgets/rekomendasi_destination.dart';

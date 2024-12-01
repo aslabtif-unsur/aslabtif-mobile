@@ -1,4 +1,4 @@
-import 'package:aslabtif_travel/landingpage.dart';
+import 'package:aslabtif_travel/screens/landingpage.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 

@@ -1,5 +1,5 @@
-import 'package:aslabtif_travel/const.dart';
-import 'package:aslabtif_travel/homescreen.dart';
+import 'package:aslabtif_travel/utils/const.dart';
+import 'package:aslabtif_travel/screens/homescreen.dart';
 import 'package:aslabtif_travel/models/landing_model.dart';
 import 'package:flutter/material.dart';
 

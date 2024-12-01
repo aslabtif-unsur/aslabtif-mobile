@@ -1,4 +1,4 @@
-import 'package:aslabtif_travel/splashscreen.dart';
+import 'package:aslabtif_travel/screens/splashscreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
