@@ -1,3 +1,4 @@
+import 'package:aslabtif_travel/materimodul/pertemuan9api.dart';
 import 'package:aslabtif_travel/screens/splashscreen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class TravelApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "NunitoSans",
       ),
-      home: Splashscreen(),
+      home: MateriAPIScreen(),
     );
   }
 }
